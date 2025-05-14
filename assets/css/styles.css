@@ -441,7 +441,7 @@ button:hover {
         padding: 20px;
     }
     .container {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .input-section{
         width: 100%;
