@@ -434,7 +434,7 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero{
-        height: 80vh;
+        min-height: 80vh;
         margin:10px;
     }
     .main-content{
