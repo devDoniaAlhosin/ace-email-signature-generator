@@ -513,7 +513,7 @@ button:hover {
 
 @media (max-width: 480px) {
     .hero{
-        min-height: 70vh;
+        min-height: 60vh;
         margin:10px;
     }
     .hero-title {
