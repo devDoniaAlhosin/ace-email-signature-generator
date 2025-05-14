@@ -234,16 +234,25 @@ function copyToClipboard() {
 
 function downloadSignature() {
     const signatureHTML = document.getElementById('signaturePreview').getAttribute('data-signature');
+    const fullName = document.getElementById('fullName').value;
+    
     if (!signatureHTML) {
         alert('Please generate a signature first');
         return;
     }
 
+    // Create a sanitized filename from the person's name
+    const sanitizedName = fullName
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, '-') 
+        .replace(/-+/g, '-')     
+        .replace(/^-|-$/g, '');    
+
     const blob = new Blob([signatureHTML], { type: 'text/html' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'index.html';
+    a.download = `ace-signature-${sanitizedName}.html`;
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
@@ -291,6 +300,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide loader after delay
     setTimeout(() => {
         loader.classList.add('hidden');
-        body.classList.remove('loading');
+        // Remove loading class after animation completes
+        setTimeout(() => {
+            body.classList.remove('loading');
+        }, 800); // Match the CSS transition duration
     }, 1500);
 }); 
