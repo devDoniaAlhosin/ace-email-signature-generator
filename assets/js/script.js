@@ -278,4 +278,12 @@ function closePreview() {
 }
 
 // Close popup when clicking outside
-document.getElementById('overlay').addEventListener('click', closePreview); 
+document.getElementById('overlay').addEventListener('click', closePreview);
+
+// Loader functionality
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 1500); // Show loader for 1.5 seconds
+}); 
