@@ -510,6 +510,13 @@ button:hover {
     .hero{
         margin:10px;
     }
+    .hero-title {
+        font-size: 26px;
+    }
+    .cta-button{
+        font-size: 15px;
+    }
+    
     .preview-popup {
         padding: 1.2rem;
     }
