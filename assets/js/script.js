@@ -281,9 +281,16 @@ function closePreview() {
 document.getElementById('overlay').addEventListener('click', closePreview);
 
 // Loader functionality
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const loader = document.getElementById('loader');
+    const body = document.body;
+    
+    // Add loading class to body
+    body.classList.add('loading');
+    
+    // Hide loader after delay
     setTimeout(() => {
         loader.classList.add('hidden');
-    }, 1500); // Show loader for 1.5 seconds
+        body.classList.remove('loading');
+    }, 1500);
 }); 
