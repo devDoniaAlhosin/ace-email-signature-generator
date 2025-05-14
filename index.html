@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE Email Signature Generator</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://ace-uae.net/wp-content/uploads/2025/04/logo_white.png" alt="ACE Logo" class="hero-logo">
+            <h1 class="hero-title">Create Your Professional Email Signature</h1>
+            <p class="hero-subtitle">Generate a beautiful, branded email signature for ACE in seconds</p>
+            <a href="#generator" class="cta-button">Create Your Signature</a>
+        </div>
+    </section>
+
+    <section class="main-content" id="generator">
+        <div class="container">
+            <div class="input-section">
+                <h1>ACE Email Signature Generator</h1>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" placeholder="Enter your job title">
+                </div>
+                <div class="button-group">
+                    <button class="primary-btn" onclick="showPreview()">Preview Signature</button>
+                    <button class="secondary-btn" onclick="copyToClipboard()">Copy HTML</button>
+                    <button class="secondary-btn" onclick="downloadSignature()">Download HTML</button>
+                </div>
+                <div id="successMessage" class="success-message">
+                    Signature copied to clipboard!
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/video/instructions.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="steps">
+                    <h3>How to Add Your Signature</h3>
+                    <ol>
+                        <li>Fill in your name and job title</li>
+                        <li>Click "Preview Signature" to see how it looks</li>
+                        <li>Click "Copy HTML" to copy the signature code</li>
+                        <li>Open Outlook and go to Settings</li>
+                        <li>Paste the HTML code into the signature editor</li>
+                        <li>Save your new signature</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="preview-popup" id="previewPopup">
+        <button class="close-btn" onclick="closePreview()">&times;</button>
+        <h2>Signature Preview</h2>
+        <div class="preview-container" id="signaturePreview">
+            <!-- Signature preview will be inserted here -->
+        </div>
+        <div class="signature-note">
+            <h3>Important Note</h3>
+            <p>Your signature has been generated with your provided information. You can now:</p>
+           <ul>
+                <li>Copy the HTML code to use in your email client</li>
+                <li>Download the HTML file for future use</li>
+                <li>Preview how it looks in different email clients</li>
+           </ul>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html> 
