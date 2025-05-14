@@ -434,7 +434,13 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .input-section{
+        width: 100%;
+    }
+    .sidebar{
+        width: 100%;
     }
     
     .hero-title {
@@ -471,6 +477,9 @@ button:hover {
         top: 1rem;
         right: 1rem;
         font-size: 1.5rem;
+        padding: 5px 10px;
+        width: 30px;
+        height: 30px;
     }
 
     .signature-note {
