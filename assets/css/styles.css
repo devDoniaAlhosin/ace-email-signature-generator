@@ -445,6 +445,9 @@ button:hover {
     .input-section h1{
         font-size: 20px;
     }
+    .cta-button{
+        font-size: 15px;
+    }
     .sidebar{
         width: 100%;
     }
@@ -504,6 +507,9 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+    .hero{
+        margin:10px;
+    }
     .preview-popup {
         padding: 1.2rem;
     }
