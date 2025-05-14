@@ -433,18 +433,24 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero{
+        margin:10px;
+    }
     .container {
         flex-direction: column;
     }
     .input-section{
         width: 100%;
     }
+    .input-section h1{
+        font-size: 20px;
+    }
     .sidebar{
         width: 100%;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 26px;
     }
     
     .hero-subtitle {
