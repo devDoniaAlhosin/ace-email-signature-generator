@@ -38,7 +38,7 @@ body {
     background: url('https://ace-uae.net/wp-content/uploads/2025/04/ert-scaled.webp');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
