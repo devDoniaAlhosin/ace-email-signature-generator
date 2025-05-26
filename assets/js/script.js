@@ -1,6 +1,7 @@
 function generateSignature() {
     const fullName = document.getElementById('fullName').value;
     const jobTitle = document.getElementById('jobTitle').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
 
     if (!fullName || !jobTitle) {
         alert('Please fill in all fields');
@@ -166,9 +167,9 @@ function generateSignature() {
                     <a href="https://www.facebook.com/ACEUAE1975" target="_blank" title="Website">
                       <img src="https://bohemiangeeks.com/wp-content/uploads/2025/05/facebook-colored.png" alt="Facebook" />
                     </a>
-                    <a href="tel:+97126273988" target="_blank" title="Call">
+                    ${phoneNumber ? `<a href="tel:+971${phoneNumber.replace(/-/g, '')}" target="_blank" title="Call">
                       <img src="https://bohemiangeeks.com/wp-content/uploads/2025/05/phone-call.png" alt="Phone" />
-                    </a>
+                    </a>` : ''}
                   </div>
                 </td>
               </tr>
@@ -305,4 +306,32 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.remove('loading');
         }, 800); // Match the CSS transition duration
     }, 1500);
+});
+
+// Phone number input handling
+document.getElementById('phoneNumber').addEventListener('input', function(e) {
+    const phoneNumber = e.target.value;
+    
+    // Remove any non-digit characters
+    const cleanNumber = phoneNumber.replace(/\D/g, '');
+    
+    // Format the number as user types (UAE format)
+    let formattedNumber = '';
+    if (cleanNumber.length > 0) {
+        if (cleanNumber.length <= 2) {
+            formattedNumber = cleanNumber;
+        } else if (cleanNumber.length <= 5) {
+            formattedNumber = `${cleanNumber.slice(0, 2)}-${cleanNumber.slice(2)}`;
+        } else {
+            formattedNumber = `${cleanNumber.slice(0, 2)}-${cleanNumber.slice(2, 5)}-${cleanNumber.slice(5, 9)}`;
+        }
+    }
+    
+    // Update input value with formatted number
+    e.target.value = formattedNumber;
+    
+    // Update signature preview if it exists
+    if (document.getElementById('signaturePreview').innerHTML) {
+        generateSignature();
+    }
 }); 

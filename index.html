@@ -36,6 +36,13 @@
                     <label for="jobTitle">Job Title</label>
                     <input type="text" id="jobTitle" placeholder="Enter your job title">
                 </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <div class="phone-input-container">
+                        <div class="country-code">+971</div>
+                        <input type="tel" id="phoneNumber" placeholder="Enter your phone number" pattern="[0-9]*">
+                    </div>
+                </div>
                 <div class="button-group">
                     <button class="primary-btn" onclick="showPreview()">Preview Signature</button>
                     <button class="secondary-btn" onclick="copyToClipboard()">Copy HTML</button>

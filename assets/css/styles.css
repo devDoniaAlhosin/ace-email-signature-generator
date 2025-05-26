@@ -637,4 +637,52 @@ button:hover {
 /* Ensure body doesn't scroll when loader is active */
 body.loading {
     overflow: hidden;
+}
+
+/* Phone Input Styles */
+.phone-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.phone-input-container:focus-within {
+    border-color: var(--primary-color);
+}
+
+.country-code {
+    padding: 0.8rem;
+    background: #f5f5f5;
+    border-right: 2px solid #e0e0e0;
+    color: var(--accent-color);
+    font-weight: 500;
+    border-radius: 4px 0 0 4px;
+}
+
+.phone-input-container input {
+    flex: 1;
+    border: none;
+    padding: 0.8rem;
+    padding-right: 40px;
+    border-radius: 0 4px 4px 0;
+}
+
+.phone-input-container input:focus {
+    outline: none;
+}
+
+.phone-icon {
+    position: absolute;
+    right: 10px;
+    font-size: 1.2rem;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.phone-input-container input:focus + .phone-icon {
+    transform: scale(1.1);
 } 
