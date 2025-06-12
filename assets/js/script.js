@@ -192,7 +192,7 @@ function generateSignature() {
                         <table cellpadding="0" cellspacing="0" style="width: 100%">
                           <tr>
                             <td class="banner">
-                              <img src="../img/banner-signature.png" alt="locations">
+                              <img src="https://bohemiangeeks.com/wp-content/uploads/2025/06/banner-ace.png" alt="locations">
                             </td>
                           </tr>
                         </table>
