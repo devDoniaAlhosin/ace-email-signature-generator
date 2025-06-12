@@ -1,14 +1,14 @@
 function generateSignature() {
-    const fullName = document.getElementById('fullName').value;
-    const jobTitle = document.getElementById('jobTitle').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
+  const fullName = document.getElementById("fullName").value;
+  const jobTitle = document.getElementById("jobTitle").value;
+  const phoneNumber = document.getElementById("phoneNumber").value;
 
-    if (!fullName || !jobTitle) {
-        alert('Please fill in all fields');
-        return;
-    }
+  if (!fullName || !jobTitle) {
+    alert("Please fill in all fields");
+    return;
+  }
 
-    const signatureHTML = `
+  const signatureHTML = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -56,7 +56,8 @@ function generateSignature() {
         .subtitle{
           color: var(--accent-signature-color);
           margin: 0;
-          font-size: 8px;
+          font-size: 7.5px;
+          font-weight: 600;
           text-transform: uppercase;
         }
         .name {
@@ -167,9 +168,16 @@ function generateSignature() {
                     <a href="https://www.facebook.com/ACEUAE1975" target="_blank" title="Website">
                       <img src="https://bohemiangeeks.com/wp-content/uploads/2025/05/facebook-colored.png" alt="Facebook" />
                     </a>
-                    ${phoneNumber ? `<a href="tel:+971${phoneNumber.replace(/-/g, '')}" target="_blank" title="Call">
+                    ${
+                      phoneNumber
+                        ? `<a href="tel:+971${phoneNumber.replace(
+                            /-/g,
+                            ""
+                          )}" target="_blank" title="Call">
                       <img src="https://bohemiangeeks.com/wp-content/uploads/2025/05/phone-call.png" alt="Phone" />
-                    </a>` : ''}
+                    </a>`
+                        : ""
+                    }
                   </div>
                 </td>
               </tr>
@@ -210,128 +218,140 @@ function generateSignature() {
     </body>
     </html>`;
 
-    document.getElementById('signaturePreview').setAttribute('data-signature', signatureHTML);
-    document.getElementById('signaturePreview').innerHTML = signatureHTML;
+  document
+    .getElementById("signaturePreview")
+    .setAttribute("data-signature", signatureHTML);
+  document.getElementById("signaturePreview").innerHTML = signatureHTML;
 }
 
 function copyToClipboard() {
-    const signatureHTML = document.getElementById('signaturePreview').getAttribute('data-signature');
-    if (!signatureHTML) {
-        alert('Please generate a signature first');
-        return;
-    }
+  const signatureHTML = document
+    .getElementById("signaturePreview")
+    .getAttribute("data-signature");
+  if (!signatureHTML) {
+    alert("Please generate a signature first");
+    return;
+  }
 
-    navigator.clipboard.writeText(signatureHTML).then(() => {
-        const successMessage = document.getElementById('successMessage');
-        successMessage.style.display = 'block';
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 3000);
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-        alert('Failed to copy signature. Please try again.');
+  navigator.clipboard
+    .writeText(signatureHTML)
+    .then(() => {
+      const successMessage = document.getElementById("successMessage");
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 3000);
+    })
+    .catch((err) => {
+      console.error("Failed to copy: ", err);
+      alert("Failed to copy signature. Please try again.");
     });
 }
 
 function downloadSignature() {
-    const signatureHTML = document.getElementById('signaturePreview').getAttribute('data-signature');
-    const fullName = document.getElementById('fullName').value;
-    
-    if (!signatureHTML) {
-        alert('Please generate a signature first');
-        return;
-    }
+  const signatureHTML = document
+    .getElementById("signaturePreview")
+    .getAttribute("data-signature");
+  const fullName = document.getElementById("fullName").value;
 
-    // Create a sanitized filename from the person's name
-    const sanitizedName = fullName
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, '-') 
-        .replace(/-+/g, '-')     
-        .replace(/^-|-$/g, '');    
+  if (!signatureHTML) {
+    alert("Please generate a signature first");
+    return;
+  }
 
-    const blob = new Blob([signatureHTML], { type: 'text/html' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `ace-signature-${sanitizedName}.html`;
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
+  // Create a sanitized filename from the person's name
+  const sanitizedName = fullName
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  const blob = new Blob([signatureHTML], { type: "text/html" });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `ace-signature-${sanitizedName}.html`;
+  document.body.appendChild(a);
+  a.click();
+  window.URL.revokeObjectURL(url);
+  document.body.removeChild(a);
 }
 
 // Smooth scroll to generator section
-document.querySelector('.cta-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('.main-content').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
+document.querySelector(".cta-button").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.querySelector(".main-content").scrollIntoView({
+    behavior: "smooth",
+  });
 });
 
 function showPreview() {
-    const fullName = document.getElementById('fullName').value;
-    const jobTitle = document.getElementById('jobTitle').value;
+  const fullName = document.getElementById("fullName").value;
+  const jobTitle = document.getElementById("jobTitle").value;
 
-    if (!fullName || !jobTitle) {
-        alert('Please fill in all fields');
-        return;
-    }
+  if (!fullName || !jobTitle) {
+    alert("Please fill in all fields");
+    return;
+  }
 
-    generateSignature();
-    document.getElementById('overlay').classList.add('active');
-    document.getElementById('previewPopup').classList.add('active');
+  generateSignature();
+  document.getElementById("overlay").classList.add("active");
+  document.getElementById("previewPopup").classList.add("active");
 }
 
 function closePreview() {
-    document.getElementById('overlay').classList.remove('active');
-    document.getElementById('previewPopup').classList.remove('active');
+  document.getElementById("overlay").classList.remove("active");
+  document.getElementById("previewPopup").classList.remove("active");
 }
 
 // Close popup when clicking outside
-document.getElementById('overlay').addEventListener('click', closePreview);
+document.getElementById("overlay").addEventListener("click", closePreview);
 
 // Loader functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const loader = document.getElementById('loader');
-    const body = document.body;
-    
-    // Add loading class to body
-    body.classList.add('loading');
-    
-    // Hide loader after delay
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("loader");
+  const body = document.body;
+
+  // Add loading class to body
+  body.classList.add("loading");
+
+  // Hide loader after delay
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    // Remove loading class after animation completes
     setTimeout(() => {
-        loader.classList.add('hidden');
-        // Remove loading class after animation completes
-        setTimeout(() => {
-            body.classList.remove('loading');
-        }, 800); // Match the CSS transition duration
-    }, 1500);
+      body.classList.remove("loading");
+    }, 800); // Match the CSS transition duration
+  }, 1500);
 });
 
 // Phone number input handling
-document.getElementById('phoneNumber').addEventListener('input', function(e) {
-    const phoneNumber = e.target.value;
-    
-    // Remove any non-digit characters
-    const cleanNumber = phoneNumber.replace(/\D/g, '');
-    
-    // Format the number as user types (UAE format)
-    let formattedNumber = '';
-    if (cleanNumber.length > 0) {
-        if (cleanNumber.length <= 2) {
-            formattedNumber = cleanNumber;
-        } else if (cleanNumber.length <= 5) {
-            formattedNumber = `${cleanNumber.slice(0, 2)}-${cleanNumber.slice(2)}`;
-        } else {
-            formattedNumber = `${cleanNumber.slice(0, 2)}-${cleanNumber.slice(2, 5)}-${cleanNumber.slice(5, 9)}`;
-        }
+document.getElementById("phoneNumber").addEventListener("input", function (e) {
+  const phoneNumber = e.target.value;
+
+  // Remove any non-digit characters
+  const cleanNumber = phoneNumber.replace(/\D/g, "");
+
+  // Format the number as user types (UAE format)
+  let formattedNumber = "";
+  if (cleanNumber.length > 0) {
+    if (cleanNumber.length <= 2) {
+      formattedNumber = cleanNumber;
+    } else if (cleanNumber.length <= 5) {
+      formattedNumber = `${cleanNumber.slice(0, 2)}-${cleanNumber.slice(2)}`;
+    } else {
+      formattedNumber = `${cleanNumber.slice(0, 2)}-${cleanNumber.slice(
+        2,
+        5
+      )}-${cleanNumber.slice(5, 9)}`;
     }
-    
-    // Update input value with formatted number
-    e.target.value = formattedNumber;
-    
-    // Update signature preview if it exists
-    if (document.getElementById('signaturePreview').innerHTML) {
-        generateSignature();
-    }
-}); 
+  }
+
+  // Update input value with formatted number
+  e.target.value = formattedNumber;
+
+  // Update signature preview if it exists
+  if (document.getElementById("signaturePreview").innerHTML) {
+    generateSignature();
+  }
+});
