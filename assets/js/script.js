@@ -125,7 +125,7 @@ function generateSignature() {
           height: 100%;
         }
         .banner img{
-          width: 94%;
+          width: 91%;
           height: 100%;
         }
         .location-title {
@@ -192,7 +192,7 @@ function generateSignature() {
                         <table cellpadding="0" cellspacing="0" style="width: 100%">
                           <tr>
                             <td class="banner">
-                              <img src="https://bohemiangeeks.com/wp-content/uploads/2025/05/banner-arc-bg-updated-final44.png" alt="locations">
+                              <img src="../img/Td [banner].png" alt="locations">
                             </td>
                           </tr>
                         </table>
