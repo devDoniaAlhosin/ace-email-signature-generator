@@ -2,9 +2,7 @@ function generateSignature() {
   const fullName = document.getElementById("fullName").value;
   const jobTitle = document.getElementById("jobTitle").value;
   const phoneNumber = document.getElementById("phoneNumber").value;
-  const fullName = document.getElementById("fullName").value;
-  const jobTitle = document.getElementById("jobTitle").value;
-  const phoneNumber = document.getElementById("phoneNumber").value;
+
 
   if (!fullName || !jobTitle) {
     alert("Please fill in all fields");
