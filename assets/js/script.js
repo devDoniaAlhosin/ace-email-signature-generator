@@ -94,7 +94,7 @@ function generateSignature() {
                   <a
                     href="https://ace-uae.net"
                     style="
-                      color: #ef3340;
+                      color: #5c5a5a;
                       font-weight: 600;
                       text-decoration: none;
                     "
@@ -107,7 +107,7 @@ function generateSignature() {
                     display: flex;
                     justify-content: start;
                     align-items: center;
-                    margin-top: 5px;
+                    margin-top: 8px;
                   "
                 >
                   <a
