@@ -41,7 +41,8 @@ function generateSignature() {
                                   <img
                     src="https://bohemiangeeks.com/wp-content/uploads/2025/05/logo-stricked-white-ace.png"
                     alt="ACE Logo"
-                    style="width: 100%"
+                    width="120"
+                    style="width: 120px; height: auto; display: block; border: 0"
                   />
               </td>
               <td
@@ -102,127 +103,92 @@ function generateSignature() {
                     www.ace-uae.net
                   </a>
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    margin-top: 8px;
-                  "
-                >
-                  <a
-                    href="https://www.linkedin.com/company/ace-alain-consulting-engineers/"
-                    target="_blank"
-                    title="LinkedIn"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background-color: #ffffff;
-                      border-radius: 50%;
-                      width: 20px;
-                      height: 20px;
-                      margin-right: 5px;
-                    "
-                  >
-                    <img
-                      src="https://bohemiangeeks.com/wp-content/uploads/2025/05/linkedin-1.png"
-                      alt="LinkedIn"
-                      style="width: 100%; height: 100%"
-                    />
-                  </a>
-                  <a
-                    href="https://x.com/engineers85203"
-                    target="_blank"
-                    title="Twitter"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background-color: #ffffff;
-                      border-radius: 50%;
-                      width: 20px;
-                      height: 20px;
-                      margin-right: 5px;
-                    "
-                  >
-                    <img
-                      src="https://bohemiangeeks.com/wp-content/uploads/2025/05/x-colored.png"
-                      alt="Twitter"
-                      style="width: 100%; height: 100%"
-                    />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/aceconsultingeng/"
-                    target="_blank"
-                    title="Instagram"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background-color: #ffffff;
-                      border-radius: 50%;
-                      width: 20px;
-                      height: 20px;
-                      margin-right: 5px;
-                    "
-                  >
-                    <img
-                      src="https://bohemiangeeks.com/wp-content/uploads/2025/05/instagram-colored.png"
-                      alt="Instagram"
-                      style="width: 100%; height: 100%"
-                    />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/ACEUAE1975"
-                    target="_blank"
-                    title="Facebook"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background-color: #ffffff;
-                      border-radius: 50%;
-                      width: 20px;
-                      height: 20px;
-                      margin-right: 5px;
-                    "
-                  >
-                    <img
-                      src="https://bohemiangeeks.com/wp-content/uploads/2025/05/facebook-colored.png"
-                      alt="Facebook"
-                      style="width: 100%; height: 100%"
-                    />
-                  </a>
-                                      ${
+                <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 8px">
+                  <tr>
+                    <td style="padding-right: 5px">
+                      <a
+                        href="https://www.linkedin.com/company/ace-alain-consulting-engineers/"
+                        target="_blank"
+                        title="LinkedIn"
+                      >
+                        <img
+                          src="https://bohemiangeeks.com/wp-content/uploads/2025/05/linkedin-1.png"
+                          alt="LinkedIn"
+                          width="20"
+                          height="20"
+                          style="width: 20px; height: 20px; display: block; border: 0"
+                        />
+                      </a>
+                    </td>
+                    <td style="padding-right: 5px">
+                      <a
+                        href="https://x.com/engineers85203"
+                        target="_blank"
+                        title="Twitter"
+                      >
+                        <img
+                          src="https://bohemiangeeks.com/wp-content/uploads/2025/05/x-colored.png"
+                          alt="Twitter"
+                          width="20"
+                          height="20"
+                          style="width: 20px; height: 20px; display: block; border: 0"
+                        />
+                      </a>
+                    </td>
+                    <td style="padding-right: 5px">
+                      <a
+                        href="https://www.instagram.com/aceconsultingeng/"
+                        target="_blank"
+                        title="Instagram"
+                      >
+                        <img
+                          src="https://bohemiangeeks.com/wp-content/uploads/2025/05/instagram-colored.png"
+                          alt="Instagram"
+                          width="20"
+                          height="20"
+                          style="width: 20px; height: 20px; display: block; border: 0"
+                        />
+                      </a>
+                    </td>
+                    <td style="padding-right: 5px">
+                      <a
+                        href="https://www.facebook.com/ACEUAE1975"
+                        target="_blank"
+                        title="Facebook"
+                      >
+                        <img
+                          src="https://bohemiangeeks.com/wp-content/uploads/2025/05/facebook-colored.png"
+                          alt="Facebook"
+                          width="20"
+                          height="20"
+                          style="width: 20px; height: 20px; display: block; border: 0"
+                        />
+                      </a>
+                    </td>
+                    ${
                       phoneNumber
-                        ? `<a
+                        ? `<td style="padding-right: 5px">
+                      <a
                       href="tel:+971${phoneNumber.replace(
                         /-/g,
                         ""
                       )}"
                       target="_blank"
                       title="Call"
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: #ffffff;
-                        border-radius: 50%;
-                        width: 20px;
-                        height: 20px;
-                        margin-right: 5px;
-                      "
                     >
                       <img
                         src="https://bohemiangeeks.com/wp-content/uploads/2025/05/phone-call.png"
                         alt="Phone"
-                        style="width: 100%; height: 100%"
+                        width="20"
+                        height="20"
+                        style="width: 20px; height: 20px; display: block; border: 0"
                       />
-                    </a>`
+                    </a>
+                    </td>`
                         : ""
                     }
-                </div>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>
@@ -239,11 +205,12 @@ function generateSignature() {
                         style="width: 100%"
                       >
                         <tr>
-                          <td style="width: 90%; height: 100%">
+                          <td>
                             <img
-                              src="https://bohemiangeeks.com/wp-content/uploads/2025/07/V2.png"
+                              src="https://ace-uae.net/wp-content/uploads/2026/09/V3.png"
                               alt="locations"
-                              style="width: 91%; height: 100%"
+                              width="310"
+                              style="width: 310px; height: auto; display: block; border: 0"
                             />
                           </td>
                         </tr>
@@ -265,30 +232,6 @@ function generateSignature() {
     .getElementById("signaturePreview")
     .setAttribute("data-signature", signatureHTML);
   document.getElementById("signaturePreview").innerHTML = signatureHTML;
-}
-
-function copyToClipboard() {
-  const signatureHTML = document
-    .getElementById("signaturePreview")
-    .getAttribute("data-signature");
-  if (!signatureHTML) {
-    alert("Please generate a signature first");
-    return;
-  }
-
-  navigator.clipboard
-    .writeText(signatureHTML)
-    .then(() => {
-      const successMessage = document.getElementById("successMessage");
-      successMessage.style.display = "block";
-      setTimeout(() => {
-        successMessage.style.display = "none";
-      }, 3000);
-    })
-    .catch((err) => {
-      console.error("Failed to copy: ", err);
-      alert("Failed to copy signature. Please try again.");
-    });
 }
 
 function downloadSignature() {
